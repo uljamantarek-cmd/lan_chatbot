@@ -3,12 +3,12 @@ import streamlit as st
 from chatbot import get_response
 
 st.set_page_config(page_title="LangChain Chatbot")
-st.title("LangChain Chatbot (RunnableBranch + RunnableParallel)")
+st.title("LangChain Chatbot")
 
 if "history" not in st.session_state:
     st.session_state.history = []
 
-if st.button("Clear Chat"):
+if st.sidebar.button("Clear Chat"):
     st.session_state.history = []
 
 for role, content in st.session_state.history:
